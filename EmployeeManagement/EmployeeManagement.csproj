@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
-    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <TargetFramework>netcoreapp2.2</TargetFramework> <!-- TFMoniker -->
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel> <!-- default is OutOfProcess either remove or mentionable -->
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,3 +11,23 @@
   </ItemGroup>
 
 </Project>
+
+
+
+
+
+<!--OutOfProcess ka matlab Vs ke bahar se run krskte hain isko-->
+<!--agar bhr se i.e cli se chalayenge to laazmi outofprocess show krega, ofcourse -->
+<!--two types internal server = kestrel-->
+<!--two types external server = iis, nginx , apache -->
+<!--agar andr se chalane pr bhi koi external server de to iska matlab wo revrse proxy server hai -->
+<!-- Internal server : Kestrel server cross platfrm webserver embedded in dotnet core app -->
+<!-- 1) internet facing server , w hile running from VS -->
+<!-- 2) Reverse proxy server catches i8ncomingf request procedes to kestrel-->
+<!-- then why not only kestrel, additional security-integratable-load balancing - deployment later discussion-->
+
+<!--InProcess: IIS = w3wp.exe ; iisexpress = iisexpress.exe -->
+<!--OutOfProcess: dotnet.exe srf dotnet core mn available hai , u know crossplatform perks-->
+<!--InP : only one web server i.e IIS, hosted inside worker porcess-->
+<!--OutP: two web servers -->
+<!--Inp is better-->

@@ -1,7 +1,9 @@
-﻿{
+﻿{ /* only required on local dev machine ,not needed for publishing the app*/
+  /* aga rkoi settings deni hain  tou appsetting mn dena*/
+
   "iisSettings": {
-    "windowsAuthentication": false, 
-    "anonymousAuthentication": true, 
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
     "iisExpress": {
       "applicationUrl": "http://localhost:60494",
       "sslPort": 0
@@ -12,7 +14,8 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "MyKey": "Value of my key from Environment Variable"
       }
     },
     "EmployeeManagement": {
@@ -20,7 +23,9 @@
       "launchBrowser": true,
       "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        //"MyKey": "Value of my key from Command Line"
+
       }
     }
   }
