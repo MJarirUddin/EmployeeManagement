@@ -1,5 +1,5 @@
 ﻿{ /* only required on local dev machine ,not needed for publishing the app*/
-  /* aga rkoi settings deni hain  tou appsetting mn dena*/
+  /* agar koi settings deni hain  tou appsetting mn dena*/
 
   "iisSettings": {
     "windowsAuthentication": false,

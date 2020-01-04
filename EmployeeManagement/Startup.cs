@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace EmployeeManagement
 {
@@ -25,17 +26,23 @@ namespace EmployeeManagement
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env) //, ILogger<Startup> logger
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage(); // an exception, in case of;
             }
 
-            app.Run(async (context) =>
+            FileServerOptions fileServerOptions = new FileServerOptions();
+            fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
+            fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("foo.html");
+
+            app.UseFileServer(fileServerOptions);
+
+            app.Run(async (context) => //this middleware responds to every request; terminal middleware capable of running solely
             {
-                await context.Response
-                .WriteAsync(_config["MyKey"]);
+                await context.Response.WriteAsync("Hello World!");// creates a Response hence reverses the pipeline 
+                //logger.LogInformation("MW3: Request Handled and respinse generated");
             });
         }
     }
@@ -49,3 +56,31 @@ namespace EmployeeManagement
 // if run from cli it will show dotnet as web host
 
 
+// allow the next middleware to run; allow it in a perimeter; use App.Use() :: next takes func a generic perimeter
+//if you wanna lof some stuff to output log then use ILogger interface which does the work
+
+/*
+            app.Use(async (context , next) => 
+            {
+                logger.LogInformation("MW1: Incoming request");
+                await next();
+                logger.LogInformation("MW1: Outgoing Response"); 
+
+            });
+            app.Use(async (context, next) => 
+            {
+                logger.LogInformation("MW2: Incoming request");
+                await next();
+                logger.LogInformation("MW2: Outgoing Response");
+
+            });
+*/
+/*
+            DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
+            defaultFilesOptions.DefaultFileNames.Clear();
+            defaultFilesOptions.DefaultFileNames.Add("foo.html");            
+            app.UseDefaultFiles(defaultFilesOptions); // can have default.html or index.html ; to be served before the terminal middleware
+            
+            app.UseStaticFiles();
+ 
+     */
