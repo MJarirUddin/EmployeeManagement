@@ -1,0 +1,17 @@
+# Day 1
+2nd Jan 2020
+1) What is ASP.Net Core ?
+2) Setting up working env.
+3) ASP.Net Core Web App creation.
+4) .csproj file
+5) main method
+6) InProcess
+7) OutOfProcess
+8) launsettings.json file
+9) appsettings.json file 
+
+# Day 2
+4th Jan 2020
+1) undesrtanding middlewares.
+2) configuring request processing pipeline in startup.cs that handles all incoming requests and produces appropriate response in order, check system log for info ; xd ;-)
+3) static files; stored in wwwroot; by default doesnt serve static files, default files ,file server , create options and pass em in the respective ,middleware.
