@@ -23,6 +23,7 @@ namespace EmployeeManagement
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -32,15 +33,13 @@ namespace EmployeeManagement
             {
                 app.UseDeveloperExceptionPage(); // an exception, in case of;
             }
-
-            FileServerOptions fileServerOptions = new FileServerOptions();
-            fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
-            fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("foo.html");
-
-            app.UseFileServer(fileServerOptions);
+            
+            app.UseStaticFiles();
+            app.UseMvcWithDefaultRoute();
 
             app.Run(async (context) => //this middleware responds to every request; terminal middleware capable of running solely
             {
+                //throw new Exception("Some problem handling the request");
                 await context.Response.WriteAsync("Hello World!");// creates a Response hence reverses the pipeline 
                 //logger.LogInformation("MW3: Request Handled and respinse generated");
             });
@@ -84,3 +83,20 @@ namespace EmployeeManagement
             app.UseStaticFiles();
  
      */
+/*
+ * 
+            FileServerOptions fileServerOptions = new FileServerOptions();
+            fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
+            fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("foo.html");
+ */
+
+// use.fileserver finds two of its predecessor's options, if none is avaialable then it will move to the next middleware i.e the app.ru
+//use.devexcpage should be plugged in as early as possible in the pipeline works like a beacon of light
+
+
+/*
+ DeveloperExceptionPageOptions developerExceptionPageOptions = new DeveloperExceptionPageOptions
+                {
+                    SourceCodeLineCount = 20
+                };
+*/
