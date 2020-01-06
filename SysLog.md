@@ -23,3 +23,12 @@
 3) What is MVC? (Finally a worthy opponent)
 4) Setup MVC in Asp.net core.
 5) diff be AddMvc and AddMvcCore
+
+# Day 4
+6th Jan 2020
+1) Model
+2) Dependency Injection
+3) Controller
+3) View
+4) Passing data to View as; ViewBag, ViewData, Strongly typed view using
+5) ViewModels
