@@ -15,3 +15,11 @@
 1) undesrtanding middlewares.
 2) configuring request processing pipeline in startup.cs that handles all incoming requests and produces appropriate response in order, check system log for info ; xd ;-)
 3) static files; stored in wwwroot; by default doesnt serve static files, default files ,file server , create options and pass em in the respective ,middleware.
+
+# Day 3
+5th Jan 2020
+1) Use.DeveloperEceptionpage functionalitites explained
+2) Dev Envs; dev stage prod
+3) What is MVC? (Finally a worthy opponent)
+4) Setup MVC in Asp.net core.
+5) diff be AddMvc and AddMvcCore
