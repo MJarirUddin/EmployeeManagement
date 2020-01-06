@@ -32,3 +32,8 @@
 3) View
 4) Passing data to View as; ViewBag, ViewData, Strongly typed view using
 5) ViewModels
+
+# Quick Sprint :
+06-01-2020
+Played with Views and RazorPages
+ListView , Layout Views, Sections, ViewStart, ViewImports
