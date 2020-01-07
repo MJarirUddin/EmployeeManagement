@@ -37,17 +37,32 @@ namespace EmployeeManagement
             }
             
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
-
-            app.Run(async (context) => //this middleware responds to every request; terminal middleware capable of running solely
+            app.UseMvc(routes => 
             {
-                //throw new Exception("Some problem handling the request");
-                await context.Response.WriteAsync("Hello World!");// creates a Response hence reverses the pipeline 
-                //logger.LogInformation("MW3: Request Handled and respinse generated");
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}"); //conventional routing
             });
+
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+//app.UseMvcWithDefaultRoute();
+//app.UseMvc(); //for attribute routing, also check home controller's routes
+/*app.Run(async (context) => //this middleware responds to every request; terminal middleware capable of running solely
+{
+    //throw new Exception("Some problem handling the request");
+    await context.Response.WriteAsync("Hello World!");// creates a Response hence reverses the pipeline 
+    //logger.LogInformation("MW3: Request Handled and respinse generated");
+});*/
 
 // IIS is InProcess hosting rn
 // inporcess is better in performance standpoint
