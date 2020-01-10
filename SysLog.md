@@ -37,3 +37,10 @@
 06-01-2020
 Played with Views and RazorPages
 ListView , Layout Views, Sections, ViewStart, ViewImports
+
+# Day 5
+7th Jan 2020
+1) Routing; Conventional and Attribute
+2) Bootstrap; Installating ext Libs and using bootstrap
+3) TagHelpers; UrlAction, HtmlAction
+4) Types; Image, Form
