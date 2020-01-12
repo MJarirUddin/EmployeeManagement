@@ -44,3 +44,15 @@ ListView , Layout Views, Sections, ViewStart, ViewImports
 2) Bootstrap; Installating ext Libs and using bootstrap
 3) TagHelpers; UrlAction, HtmlAction
 4) Types; Image, Form
+
+
+# Day 6
+10th Jan 2020
+1) What is Entity Framework Core; installation
+2) DbContext class
+3) Sqlserver usage with EF Core
+4) repostiory pattern
+5) EF core migraions
+6) EF core seed data
+7) Domain models and db schema in sync;
+8) file upload in .net core mvc
