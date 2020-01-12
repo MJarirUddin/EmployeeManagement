@@ -45,7 +45,6 @@ ListView , Layout Views, Sections, ViewStart, ViewImports
 3) TagHelpers; UrlAction, HtmlAction
 4) Types; Image, Form
 
-
 # Day 6
 10th Jan 2020
 1) What is Entity Framework Core; installation
@@ -56,3 +55,16 @@ ListView , Layout Views, Sections, ViewStart, ViewImports
 6) EF core seed data
 7) Domain models and db schema in sync;
 8) file upload in .net core mvc
+
+# Day 7
+11th Jan 2020
+1) Upload multiple files(optional)
+2) Edit View; httpget and httppost
+3) handling 404; 
+4) 404-i resource with specified id doesn't exist
+5) 404-ii centralised 404 error handling 
+6) Use StatusCode Pages; redirects, reexecute.
+
+
+## Completed web app, performs all CRUD operations; presents good UI, error handling, clean coding, better views! 
+# ALL DONE!
